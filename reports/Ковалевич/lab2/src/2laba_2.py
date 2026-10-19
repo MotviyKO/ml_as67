@@ -12,9 +12,9 @@ y = df['class']
 
 X = pd.get_dummies(X, drop_first=True)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, random_state = 42, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7)
 
-model = LogisticRegression(max_iter=1000, random_state=42)
+model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
